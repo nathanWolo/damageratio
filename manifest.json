@@ -1,0 +1,23 @@
+{
+  "name" : "Damage Ratio",
+  "description" : "Takes the Ratio of Damage done vs Damage taken on logs.tf",
+  "version" : "1.0",
+  "manifest_version" : 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://logs.tf/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": {
+           "48": "/images/EFF48.png",
+          "128": "/images/EFF128.png" }
+}
